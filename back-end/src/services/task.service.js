@@ -26,4 +26,16 @@ const create = async (newTask) => {
   return newTask;
 }
 
-module.exports = { getAll, getById, create };
+const deleteById = async (id) => {
+  const task = await Task.findByPk(id);
+
+  if (task) {
+    await Task.destroy({ where: { id } });
+
+    return { id };
+  }
+
+  throw new Error('Task not found');
+}
+
+module.exports = { getAll, getById, create, deleteById };
