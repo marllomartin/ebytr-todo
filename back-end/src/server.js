@@ -1,15 +1,17 @@
 require('dotenv').config();
 const app = require('./app');
 
-const {
-  getAll, getById, create, deleteById,
-} = require('./controllers/task.controller');
+const taskController = require('./controllers/task.controller');
+const taskMiddleware = require('./middlewares/task.middleware');
+
+const { getAll, getById, create, deleteById } = taskController;
+const { verifyTaskName, verifyTaskStatus } = taskMiddleware;
 
 const port = process.env.PORT;
 
 app.get('/task', getAll);
 app.get('/task/:id', getById);
-app.post('/task', create);
+app.post('/task', verifyTaskName, verifyTaskStatus, create);
 app.delete('/task/:id', deleteById);
 
 app.listen(port, () => console.log('Ouvindo porta', port));
