@@ -23,4 +23,16 @@ const getById = async (req, res) => {
   }
 }
 
-module.exports = { getAll, getById };
+const create = async (req, res) => {
+  const newTask = req.body;
+
+  try {
+    const result = await taskService.create(newTask);
+
+    return res.status(StatusCodes.CREATED).send(result);
+  } catch (Error) {
+    return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
+  }
+}
+
+module.exports = { getAll, getById, create };
