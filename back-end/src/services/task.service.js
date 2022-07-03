@@ -20,4 +20,10 @@ const getById = async (id) => {
   return task
 }
 
-module.exports = { getAll, getById };
+const create = async (newTask) => {
+  await Task.create(newTask);
+
+  return newTask;
+}
+
+module.exports = { getAll, getById, create };
