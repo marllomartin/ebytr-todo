@@ -41,14 +41,27 @@ const deleteById = async (req, res) => {
   try {
     await taskService.deleteById(id);
 
-    return res.status(StatusCodes.OK).json({ message: `Task of ID ${id} sucessfully deleted` });
+    return res.status(StatusCodes.OK).json({ message: `Task of ID ${id} successfully deleted` });
+  } catch (Error) {
+    return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
+  }
+};
+
+const updateStatusById = async (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  try {
+    await taskService.updateStatusById(id, status);
+
+    return res.status(StatusCodes.OK).json({ message: `Status of Task ID ${id} successfully updated to ${status}` });
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
 };
 
 const taskController = {
-  getAll, getById, create, deleteById,
+  getAll, getById, create, deleteById, updateStatusById,
 };
 
 module.exports = taskController;
