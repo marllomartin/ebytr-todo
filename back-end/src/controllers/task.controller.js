@@ -1,5 +1,5 @@
-const taskService = require('../services/task.service');
 const { StatusCodes } = require('http-status-codes');
+const taskService = require('../services/task.service');
 
 const getAll = async (_req, res) => {
   try {
@@ -9,19 +9,19 @@ const getAll = async (_req, res) => {
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
-}
+};
 
 const getById = async (req, res) => {
   const { id } = req.params;
 
-  try { 
+  try {
     const result = await taskService.getById(id);
 
     return res.status(StatusCodes.OK).send(result);
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
-}
+};
 
 const create = async (req, res) => {
   const newTask = req.body;
@@ -33,18 +33,20 @@ const create = async (req, res) => {
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
-}
+};
 
 const deleteById = async (req, res) => {
   const { id } = req.params;
-  
-  try { 
+
+  try {
     await taskService.deleteById(id);
 
     return res.status(StatusCodes.OK).json({ message: `Task of ID ${id} sucessfully deleted` });
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
-}
+};
 
-module.exports = { getAll, getById, create, deleteById };
+module.exports = {
+  getAll, getById, create, deleteById,
+};

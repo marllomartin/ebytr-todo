@@ -8,7 +8,7 @@ const getAll = async () => {
   }
 
   return tasks;
-}
+};
 
 const getById = async (id) => {
   const task = await Task.findByPk(id);
@@ -17,14 +17,14 @@ const getById = async (id) => {
     throw new Error('No task found');
   }
 
-  return task
-}
+  return task;
+};
 
 const create = async (newTask) => {
   await Task.create(newTask);
 
   return newTask;
-}
+};
 
 const deleteById = async (id) => {
   const task = await Task.findByPk(id);
@@ -36,6 +36,8 @@ const deleteById = async (id) => {
   }
 
   throw new Error('Task not found');
-}
+};
 
-module.exports = { getAll, getById, create, deleteById };
+module.exports = {
+  getAll, getById, create, deleteById,
+};

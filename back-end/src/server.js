@@ -1,9 +1,11 @@
 require('dotenv').config();
 const app = require('./app');
 
-const { getAll, getById, create, deleteById } = require('./controllers/task.controller');
+const {
+  getAll, getById, create, deleteById,
+} = require('./controllers/task.controller');
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
 app.get('/task', getAll);
 app.get('/task/:id', getById);
