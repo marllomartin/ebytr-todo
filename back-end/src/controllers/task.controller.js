@@ -35,4 +35,16 @@ const create = async (req, res) => {
   }
 }
 
-module.exports = { getAll, getById, create };
+const deleteById = async (req, res) => {
+  const { id } = req.params;
+  
+  try { 
+    await taskService.deleteById(id);
+
+    return res.status(StatusCodes.OK).json({ message: `Task of ID ${id} sucessfully deleted` });
+  } catch (Error) {
+    return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
+  }
+}
+
+module.exports = { getAll, getById, create, deleteById };
