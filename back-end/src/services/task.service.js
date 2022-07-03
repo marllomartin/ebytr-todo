@@ -10,4 +10,14 @@ const getAll = async () => {
   return tasks;
 }
 
-module.exports = { getAll };
+const getById = async (id) => {
+  const task = await Task.findByPk(id);
+
+  if (!task) {
+    throw new Error('No task found');
+  }
+
+  return task
+}
+
+module.exports = { getAll, getById };
