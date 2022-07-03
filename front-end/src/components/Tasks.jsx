@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
-export default class Header extends Component {
+export default class Tasks extends Component {
+
   render() {
+
     return (
       <div>
-        <h1>Form</h1>
+        <h1>Tasks</h1>
       </div>
     )
   }
