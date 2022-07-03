@@ -38,6 +38,18 @@ const deleteById = async (id) => {
   throw new Error('Task not found');
 };
 
+const updateStatusById = async (id, status) => {
+  const task = await Task.findByPk(id);
+
+  if (!task) {
+    throw new Error('Task not found');
+  }
+
+  await Task.update({ status }, { where: { id } });
+
+  return { id, status };
+};
+
 module.exports = {
-  getAll, getById, create, deleteById,
+  getAll, getById, create, deleteById, updateStatusById,
 };
