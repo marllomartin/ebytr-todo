@@ -47,6 +47,8 @@ const deleteById = async (req, res) => {
   }
 };
 
-module.exports = {
+const taskController = {
   getAll, getById, create, deleteById,
 };
+
+module.exports = taskController;
