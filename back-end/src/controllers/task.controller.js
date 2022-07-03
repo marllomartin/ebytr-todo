@@ -11,4 +11,16 @@ const getAll = async (_req, res) => {
   }
 }
 
-module.exports = { getAll };
+const getById = async (req, res) => {
+  const { id } = req.params;
+
+  try { 
+    const result = await taskService.getById(id);
+
+    return res.status(StatusCodes.OK).send(result);
+  } catch (Error) {
+    return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
+  }
+}
+
+module.exports = { getAll, getById };
