@@ -40,7 +40,7 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
 * [Sequelize](https://sequelize.org/)
 * [Node.js](https://nodejs.org/en/)
   * [Express](https://expressjs.com/pt-br/)
-  * [Cors](https://www.npmjs.com/package/cors)
+  * [CORS](https://www.npmjs.com/package/cors)
   * [HTTP-Status-Codes](https://www.npmjs.com/package/http-status-codes)
 
 
