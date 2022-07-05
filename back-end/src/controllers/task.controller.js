@@ -47,21 +47,21 @@ const deleteById = async (req, res) => {
   }
 };
 
-const updateStatusById = async (req, res) => {
+const updateTaskById = async (req, res) => {
   const { id } = req.params;
-  const { status } = req.body;
+  const { name, status } = req.body;
 
   try {
-    await taskService.updateStatusById(id, status);
+    await taskService.updateTaskById(id, name, status);
 
-    return res.status(StatusCodes.OK).json({ message: `Status of Task ID ${id} successfully updated to ${status}` });
+    return res.status(StatusCodes.OK).json({ message: 'Task updated' });
   } catch (Error) {
     return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
   }
 };
 
 const taskController = {
-  getAll, getById, create, deleteById, updateStatusById,
+  getAll, getById, create, deleteById, updateTaskById,
 };
 
 module.exports = taskController;
