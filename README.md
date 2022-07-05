@@ -16,7 +16,7 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
 
   * Permitir o consumo do Back-End com a utilização do **CORS**;
 
-  * Aplicação do padrão MSC (Model, Service, Controller);
+  * Organização no padrão de camadas MSC (Model, Service, Controller);
 
   * Estruturação de uma API utilizando o Sequelize;
 
