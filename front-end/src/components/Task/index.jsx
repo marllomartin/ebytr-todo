@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from 'prop-types';
 import { TaskContext } from "../../context/TaskContext";
-import { IoPencil, IoTrashSharp } from "react-icons/io5"
+import { BsPencilFill, BsTrashFill } from "react-icons/bs"
 import { Container, ButtonArea, ButtonEdit, ButtonDelete } from "./styles";
 
 export function Task({ id, name, status }) {
@@ -14,10 +14,10 @@ export function Task({ id, name, status }) {
         <h3>{status}</h3>
         <ButtonArea>
           <ButtonEdit onClick={() => handleEdit(id, name, status)}>
-            <IoPencil />
+            <BsPencilFill />
           </ButtonEdit>
           <ButtonDelete onClick={() => handleDelete(id)}>
-            <IoTrashSharp />
+            <BsTrashFill />
           </ButtonDelete>
         </ButtonArea>
       </Container>
