@@ -79,6 +79,7 @@ export const ButtonDelete = styled.button`
     background-color: #a83935;
 
     svg {
+    transition: 0.5s;
     color: #ffffff;
   }
   }
