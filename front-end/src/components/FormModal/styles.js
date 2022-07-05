@@ -19,8 +19,8 @@ export const Container = styled.div`
   background: #ffffff;
   width: 100%;
   height: 100%;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 480px;
   padding: 32px 48px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
@@ -41,13 +41,26 @@ export const Header = styled.header`
   background-color: transparent;
   padding: 0;
 
-  font-size: 18px;
+  font-size: 40px;
 
   button {
-    max-height: 25px;
-    background: none;
     border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #E2E0CA;
     cursor: pointer;
+
+    transition: 0.5s;
+
+    :hover {
+      background-color: #a83935;
+
+      svg {
+        transition: 0.5s;
+        color: #ffffff;
+      }
+    }
   }
 `;
 export const FormContainer = styled.form`
@@ -57,7 +70,7 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 15px;
+  gap: 90px;
 `;
 
 export const FormMain = styled.main`
@@ -78,28 +91,26 @@ export const InputGroup = styled.div`
   input {
     border: none;
     color: #1e1e1e;
-    background-color: #f5f5f5;
-    border-radius: 5px;
+    background-color: #E2E0CA;
+    border-radius: 30px;
 
     height: 30px;
     width: 100%;
-    margin-top: 5px;
     padding-left: 10px;
   }
   select {
     border: none;
     color: #1e1e1e;
-    background-color: #f5f5f5;
-    border-radius: 5px;
+    background-color: #E2E0CA;
+    border-radius: 30px;
 
-    height: 33px;
+    height: 32px;
     width: 100%;
-    margin-top: 5px;
     padding-left: 10px;
   }
   option {
     color: #1e1e1e;
-    background-color: #f5f5f5;
+    background-color: #E2E0CA;
   }
 `;
 export const Footer = styled.div`
@@ -125,8 +136,8 @@ export const Footer = styled.div`
 `;
 
 export const CloseIcon = styled(IoClose)`
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
 `;
 export const CheckIcon = styled(IoCheckmark)`
   color: white;

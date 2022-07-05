@@ -8,6 +8,7 @@ export const AddTaskButton = styled.button`
   background-color: rgba(0, 0, 0, 0.04);
 
   padding: 10px;
+  margin: 5px;
   height: 200px;
   width: 250px;
   cursor: pointer;

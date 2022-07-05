@@ -4,13 +4,15 @@ export const Container = styled.header`
   width: 100vw;
   height: 50px;
   padding: 0px 20px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
+  justify-content: center;
   display: flex;
   align-items: center;
 
   & h3 {
-    font-size: 30px;
+    font-size: 35px;
     text-align: center;
     color: #E2E0CA;
   }

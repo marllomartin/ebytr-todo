@@ -4,13 +4,13 @@ import { Overlay, Container, Header, CloseIcon, FormContainer, FormMain, InputGr
 
 export default function FormModal() {
 
-  const { handleCloseModal, name, handleChangeName, handleChangeStatus, handleSubmit } = useContext(TaskContext);
+  const { handleCloseModal, id, name, status, handleChangeName, handleChangeStatus, handleSubmit } = useContext(TaskContext);
 
   return (
     <Overlay>
       <Container>
         <Header>
-          <strong>New task</strong>
+          <strong>{id ? `Nova tarefa` : `Editar tarefa`}</strong>
           <button type="button" onClick={handleCloseModal}>
             <CloseIcon />
           </button>
@@ -22,7 +22,7 @@ export default function FormModal() {
               <input
                 id="name"
                 type="text"
-                placeholder="task name"
+                placeholder="Breve descrição do que há para ser feito"
                 value={name}
                 onChange={handleChangeName}
               />
@@ -31,7 +31,7 @@ export default function FormModal() {
               <label htmlFor="status">Status: </label>
               <select
                 id="status"
-                defaultValue="Pendente"
+                defaultValue={status}
                 onChange={handleChangeStatus}
               >
                 <option value="Pendente">Pendente</option>
