@@ -10,7 +10,7 @@ export default function FormModal() {
     <Overlay>
       <Container>
         <Header>
-          <strong>New task</strong>
+          <strong>Nova tarefa</strong>
           <button type="button" onClick={handleCloseModal}>
             <CloseIcon />
           </button>
@@ -22,7 +22,7 @@ export default function FormModal() {
               <input
                 id="name"
                 type="text"
-                placeholder="task name"
+                placeholder="Breve descrição do que há para ser feito"
                 value={name}
                 onChange={handleChangeName}
               />
