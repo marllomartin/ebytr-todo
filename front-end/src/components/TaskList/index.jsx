@@ -1,28 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { Container, TaskListWrapper } from "./styles";
+import React from "react";
+import { useAxios } from "../../hooks/useAxios";
 
+import { Container, TaskListWrapper } from "./styles";
 import { Task } from "../Task";
 import AddTask from "../AddTask"
 
-import taskAPI from '../../services/taskAPI'
-
-
 export default function TaskList() {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    taskAPI.get("task").then(({ data }) => {
-      setTasks(data);
-    })
-    console.log(tasks);
-  }, [])
+  const { data } = useAxios("task");
 
   return (
     <Container>
       <TaskListWrapper>
-        {tasks?.map((task) => (
+        {data?.map((task) => (
           <Task
-            key={task.id}
+            key={task.id ? task.id : Math.random()}
+            id={task.id}
             name={task.name}
             status={task.status}
           />
