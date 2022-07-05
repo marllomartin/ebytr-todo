@@ -100,3 +100,7 @@ npm install
 ```
 npm start
 ```
+
+## Referências
+
+A [série de vídeos](https://www.youtube.com/watch?v=ntKkelmj01o&list=PL8YNlUoOZkkY8wjaI2t8DfvysoysmMLCv&ab_channel=Huriel) do [Huriel Lopes](https://github.com/huri3l) serviu de uma ajuda extraordinária para o estudo, entendimento e configuração do Axios, SWR, Hooks Personalizados e da biblioteca de Styled Components.
