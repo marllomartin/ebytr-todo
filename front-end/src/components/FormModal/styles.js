@@ -21,7 +21,7 @@ export const Container = styled.div`
   height: 100%;
   max-width: 500px;
   max-height: 480px;
-  padding: 32px 48px;
+  padding: 35px 50px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
   
@@ -40,6 +40,7 @@ export const Header = styled.header`
   color: #1e1e1e;
   background-color: transparent;
   padding: 0;
+  margin-bottom: 20px;
 
   font-size: 40px;
 
@@ -83,6 +84,7 @@ export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-top: 30px;
 
   label {
     font-size: 18px;
@@ -94,7 +96,7 @@ export const InputGroup = styled.div`
     background-color: #E2E0CA;
     border-radius: 30px;
 
-    height: 30px;
+    height: 40px;
     width: 100%;
     padding-left: 10px;
   }
@@ -104,7 +106,7 @@ export const InputGroup = styled.div`
     background-color: #E2E0CA;
     border-radius: 30px;
 
-    height: 32px;
+    height: 40px;
     width: 100%;
     padding-left: 10px;
   }
@@ -126,6 +128,7 @@ export const Footer = styled.div`
     height: 40px;
     font-weight: 700;
     cursor: pointer;
+    margin-bottom: 10px;
 
     transition: 0.5s;
 
@@ -136,8 +139,9 @@ export const Footer = styled.div`
 `;
 
 export const CloseIcon = styled(IoClose)`
-  height: 20px;
-  width: 20px;
+  margin-top: 2px;
+  width: 2em;
+  height: 2em;
 `;
 export const CheckIcon = styled(IoCheckmark)`
   color: white;
