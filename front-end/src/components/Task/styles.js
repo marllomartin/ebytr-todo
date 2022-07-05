@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: #ffffff;
   padding: 10px;
+  margin: 5px;
   height: 200px;
   width: 250px;
 
   border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.5);
 
   display: flex;
   flex-direction: column;
@@ -21,10 +22,8 @@ export const Container = styled.div`
   }
 
   h3 {
-    max-width: 230px;
     font-size: 17px;
-
-    color: #999999;
+    color: #7c7c7c;
   }
 `;
 
