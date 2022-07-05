@@ -1,15 +1,17 @@
-import './App.css';
-import { Route, Routes } from "react-router";
+import GlobalStyles from "./styles/GlobalStyles";
 import React from 'react';
-import Main from './pages/Main';
+
+import { TaskContextProvider } from "./context/TaskContext";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
-    </div>
+    <>
+      <TaskContextProvider>
+        <Layout />
+      </TaskContextProvider>
+      <GlobalStyles />
+    </>
   );
 }
 
