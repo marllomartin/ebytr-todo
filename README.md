@@ -36,6 +36,7 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
 ## Tecnologias Utilizadas
 
 ### Back-End
+* [MySQL](https://www.mysql.com/)
 * [Sequelize](https://sequelize.org/)
 * [Node.js](https://nodejs.org/en/)
   * [Express](https://expressjs.com/pt-br/)
