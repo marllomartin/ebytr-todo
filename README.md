@@ -1,7 +1,7 @@
 # Ebytr ToDo
 
 ## Sobre
-Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio técnico da empresa fictícia Ebytr. 
+Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/).
 
 Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente, Em andamento ou Concluída), assim como editar o nome e o status de tarefas já existentes ou deletá-las.
 
