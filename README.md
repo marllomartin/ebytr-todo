@@ -91,7 +91,7 @@ npm run dev
 ```
 
 ### Inicializando o Front-End:
-#### Mudando para a pasta de Back-End:
+#### Mudando para a pasta de Front-End:
 ```
 cd front-end
 ```
