@@ -3,6 +3,8 @@
 ## Sobre
 Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/).
 
+![ToDo](https://github.com/marllomartin/ebytr-todo/blob/main/front-end/public/todo.gif)
+
 Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente, Em andamento ou Concluída), assim como editar o nome e o status de tarefas já existentes ou deletá-las.
 
 
@@ -16,9 +18,9 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
 
   * Permitir o consumo do Back-End com a utilização do **CORS**;
 
-  * Organização no padrão de camadas MSC (Model, Service, Controller);
+  * Estruturação de uma API no padrão de camadas MSC (Model, Service, Controller);
 
-  * Estruturação de uma API utilizando o Sequelize;
+  * Organização do banco de dados utilizando o Sequelize;
 
 #### Front-End
 
