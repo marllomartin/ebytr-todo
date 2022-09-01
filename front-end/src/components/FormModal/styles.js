@@ -20,14 +20,20 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   max-width: 500px;
-  max-height: 480px;
+  max-height: 650px;
   padding: 35px 50px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
   
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  hr {
+    align-self: center;
+    width: 100%;
+    border-bottom: none;
+    margin-top: 15px;
+  }
 `;
 export const Header = styled.header`
   display: flex;
@@ -37,19 +43,25 @@ export const Header = styled.header`
   width: 100%;
   height: 40px;
 
-  color: #1e1e1e;
   background-color: transparent;
   padding: 0;
   margin-bottom: 20px;
 
   font-size: 40px;
 
+  strong {
+    max-width: 350px;
+    color: #aaa999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   button {
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: #E2E0CA;
+    background-color: #ededed;
     cursor: pointer;
 
     transition: 0.5s;
@@ -71,7 +83,6 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 90px;
 `;
 
 export const FormMain = styled.main`
@@ -83,8 +94,9 @@ export const FormMain = styled.main`
 export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin-top: 30px;
+  gap: 10px;
+  margin-top: 25px;
+  color: #ededed
 
   label {
     font-size: 18px;
@@ -92,38 +104,46 @@ export const InputGroup = styled.div`
 
   input {
     border: none;
-    color: #1e1e1e;
-    background-color: #E2E0CA;
-    border-radius: 30px;
+    background-color: #ededed;
 
     height: 40px;
     width: 100%;
     padding-left: 10px;
   }
+
+  textarea{
+    resize: none;
+    border: none;
+    background-color: #ededed;
+
+    height: 140px;
+    width: 100%;
+    padding: 10px;
+  }
+
   select {
     border: none;
-    color: #1e1e1e;
-    background-color: #E2E0CA;
-    border-radius: 30px;
+    background-color: #ededed;
 
     height: 40px;
     width: 100%;
-    padding-left: 10px;
+    padding: 10px;
   }
   option {
-    color: #1e1e1e;
-    background-color: #E2E0CA;
+    background-color: #ededed;
   }
 `;
+
 export const Footer = styled.div`
   display: flex;
   justify-content: center;
+  margin: 10px;
 
   button {
     align-self: center;
-    background-color: #559966;
+    background-color: #4156C4;
     border: none;
-    border-radius: 6px;
+    border-radius: 20px;
     width: 170px;
     height: 40px;
     font-weight: 700;

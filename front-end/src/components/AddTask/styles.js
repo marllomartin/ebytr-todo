@@ -6,14 +6,13 @@ export const AddTaskButton = styled.button`
   list-style: none;
   border: 5px dashed #E2E0CA;
   background-color: rgba(0, 0, 0, 0.04);
-
   padding: 10px;
-  margin: 5px;
-  height: 200px;
-  width: 250px;
+  margin: 15px;
+  height: 330px;
+  width: 290px;
+
   cursor: pointer;
 
-  border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
 
   display: flex;

@@ -4,16 +4,18 @@ import { TaskContext } from "../../context/TaskContext";
 import { BsPencilFill, BsTrashFill } from "react-icons/bs"
 import { Container, ButtonArea, ButtonEdit, ButtonDelete } from "./styles";
 
-export function Task({ id, name, status }) {
+export function Task({ id, title, description, status }) {
   const { handleEdit, handleDelete } = useContext(TaskContext);
 
   return (
     <li>
       <Container>
-        <h2>{name}</h2>
-        <h3>{status}</h3>
+        <h2 className="title">{title}</h2>
+        <h2 className="status" data-status={status}>{status}</h2>
+        <hr />
+        <p className="description">{description}</p>
         <ButtonArea>
-          <ButtonEdit onClick={() => handleEdit(id, name, status)}>
+          <ButtonEdit onClick={() => handleEdit(id, title, description, status)}>
             <BsPencilFill />
           </ButtonEdit>
           <ButtonDelete onClick={() => handleDelete(id)}>
@@ -27,6 +29,6 @@ export function Task({ id, name, status }) {
 
 Task.propTypes = {
   id: PropTypes.number,
-  name: PropTypes.string,
+  title: PropTypes.string,
   status: PropTypes.string,
 }.isRequired;

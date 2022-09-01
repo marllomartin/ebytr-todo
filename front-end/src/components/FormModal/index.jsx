@@ -4,13 +4,13 @@ import { Overlay, Container, Header, CloseIcon, FormContainer, FormMain, InputGr
 
 export default function FormModal() {
 
-  const { handleCloseModal, name, status, handleChangeName, handleChangeStatus, handleSubmit } = useContext(TaskContext);
+  const { handleCloseModal, title, description, status, handleChangeTitle, handleChangeDescription, handleChangeStatus, handleSubmit } = useContext(TaskContext);
 
   return (
     <Overlay>
       <Container>
         <Header>
-          <strong>Tarefa</strong>
+          <strong>{title? title : "Nova tarefa"}</strong>
           <button type="button" onClick={handleCloseModal}>
             <CloseIcon />
           </button>
@@ -18,13 +18,13 @@ export default function FormModal() {
         <FormContainer onSubmit={handleSubmit}>
           <FormMain>
             <InputGroup>
-              <label htmlFor="name">Nome: </label>
+              <label htmlFor="title">Título: </label>
               <input
-                id="name"
+                id="title"
                 type="text"
-                placeholder="Breve descrição do que há para ser feito"
-                value={name}
-                onChange={handleChangeName}
+                placeholder="Nome da tarefa"
+                value={title}
+                onChange={handleChangeTitle}
                 required="true"
               />
             </InputGroup>
@@ -40,12 +40,23 @@ export default function FormModal() {
                 <option value="Concluído">Concluído</option>
               </select>
             </InputGroup>
-          </FormMain>
-          <Footer>
+            <hr />
+            <InputGroup>
+              <label htmlFor="descrição">Descrição: </label>
+              <textarea
+                id="description"
+                type="text"
+                placeholder="Breve descrição do que há para ser feito"
+                value={description}
+                onChange={handleChangeDescription}
+              />
+            </InputGroup>
+            <Footer>
             <button type="submit">
               <CheckIcon />
             </button>
           </Footer>
+          </FormMain>
         </FormContainer>
       </Container>
     </Overlay>
