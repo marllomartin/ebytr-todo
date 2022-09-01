@@ -5,18 +5,18 @@ const Task = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    title: {
       allowNull: false,
       type: DataTypes.STRING,
+    },
+    description: {
+      type: DataTypes.TEXT,
     },
     status: {
       allowNull: false,
       type: DataTypes.STRING,
     }
   });
-  Task.associate = function (models) {
-    // association
-  };
   return Task;
 };
 

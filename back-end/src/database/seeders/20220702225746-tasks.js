@@ -4,20 +4,23 @@ module.exports = {
   up: async (queryInterface, Sequelize) => queryInterface.bulkInsert('Tasks',
     [
       {
-        name: 'Tarefa 1',
+        title: 'Tarefa 1',
+        description: 'Essa é a primeira tarefa',
         status: 'Pendente',
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       {
-        name: 'Tarefa 2',
+        title: 'Tarefa 2',
+        description: 'Essa é a segunda tarefa',
         status: 'Em andamento',
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       {
-        name: 'Tarefa 3',
-        status: 'Pronto',
+        title: 'Tarefa 3',
+        description: 'Essa é a terceira tarefa',
+        status: 'Concluído',
         createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
         updatedAt: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
