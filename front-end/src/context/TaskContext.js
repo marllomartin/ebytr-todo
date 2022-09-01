@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
-import PropTypes from 'prop-types';
-import FormModal from '../components/FormModal';
-import { useAxios } from '../hooks/useAxios';
+import PropTypes from "prop-types";
+import FormModal from "../components/FormModal";
+import { useAxios } from "../hooks/useAxios";
 import taskAPI from "../services/taskAPI";
 
 export const TaskContext = createContext();
@@ -10,33 +10,50 @@ export function TaskContextProvider({ children }) {
   const { data, mutate } = useAxios("task");
 
   const [openFormModal, setOpenFormModal] = useState(false);
-  const [name, setName] = useState("");
+
+  const [title, setTitle] = useState("");
+  const [titleFilter, setTitleFilter] = useState("");
+
+  const [description, setDescription] = useState("");
+
   const [status, setStatus] = useState("Pendente");
+  const [statusFilter, setStatusFilter] = useState("");
+
   const [id, setId] = useState(false);
 
-  function handleEdit(taskId, taskName, taskStatus) {
-    setName(taskName);
+  function handleEdit(taskId, taskTitle, taskDescription, taskStatus) {
+    setTitle(taskTitle);
+    setDescription(taskDescription);
     setStatus(taskStatus);
     setId(taskId);
     setOpenFormModal(true);
   }
 
   function handleAddTask() {
+    setTitleFilter("");
+    setStatusFilter("");
     setOpenFormModal(true);
   }
 
   function handleCloseModal() {
-    if (name) {
-      setName('');
+    if (title) {
+      setTitle("");
+    }
+    if (description) {
+      setDescription("");
     }
     if (status) {
-      setStatus('Pendente');
+      setStatus("Pendente");
     }
     setOpenFormModal(false);
   }
 
-  function handleChangeName(event) {
-    setName(event.target.value);
+  function handleChangeTitle(event) {
+    setTitle(event.target.value);
+  }
+
+  function handleChangeDescription(event) {
+    setDescription(event.target.value);
   }
 
   function handleChangeStatus(event) {
@@ -54,19 +71,15 @@ export function TaskContextProvider({ children }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const task = {
-      id, name, status
-    };
+    const task = { id, title, description, status };
 
     if (id) {
-      taskAPI.put(`task/${id}`, {
-        name, status
-      })
+      taskAPI.put(`task/${id}`, { title, description, status })
 
       const updatedTasks = data?.map((task) => {
         if (task.id === id) {
           return {
-            ...task, name, status
+            ...task, title, description, status
           };
         }
         return task;
@@ -81,7 +94,8 @@ export function TaskContextProvider({ children }) {
       mutate(updatedTasks, false);
     }
 
-    setName("");
+    setTitle("");
+    setDescription("");
     setStatus("Pendente");
     setOpenFormModal(false);
   }
@@ -90,13 +104,17 @@ export function TaskContextProvider({ children }) {
     <TaskContext.Provider value={{
       handleAddTask,
       handleCloseModal,
-      handleChangeName,
+      handleChangeTitle,
+      handleChangeDescription,
       handleChangeStatus,
       handleSubmit,
       handleEdit,
       handleDelete,
-      name, setName,
+      title, setTitle,
+      titleFilter, setTitleFilter,
+      description, setDescription,
       status, setStatus,
+      statusFilter, setStatusFilter,
       id, setId
     }}>
       {children}
