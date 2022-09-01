@@ -5,7 +5,12 @@ Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio 
 
 ![ToDo](https://github.com/marllomartin/ebytr-todo/blob/main/front-end/public/todo.gif)
 
-Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente, Em andamento ou Concluída), assim como editar o nome e o status de tarefas já existentes ou deletá-las.
+## Funcionalidades
+- Exibir tarefas existentes;
+- Adicionar uma nova tarefa;
+- Filtrar exibição de tarefas por título ou por status;
+- Atualizar tarefas existentes;
+- Deletar tarefas
 
 
 ## Aprendizados
@@ -36,7 +41,7 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
 
 
 ## Tecnologias Utilizadas
-
+* [Docker](https://www.docker.com/)
 ### Back-End
 * [MySQL](https://www.mysql.com/)
 * [Sequelize](https://sequelize.org/)
@@ -52,6 +57,19 @@ Nela, o usuário é capaz de salvar tarefas e seus respectivos status (Pendente,
   * [Styled Components](https://styled-components.com/)
   * [Axios](https://axios-http.com/ptbr/docs/intro)
   * [SWR](https://swr.vercel.app/pt-BR)
+
+## Rodando o projeto com o Docker (recomendado)
+
+### Clonando o projeto:
+```
+git clone git@github.com:marllomartin/ebytr-todo.git
+
+cd ebytr-todo
+```
+### Inicializando o Docker
+```
+docker-compose up --build
+```
 
 ## Rodando o projeto localmente
 
