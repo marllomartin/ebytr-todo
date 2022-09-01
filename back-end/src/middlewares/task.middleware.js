@@ -1,10 +1,10 @@
 const { StatusCodes } = require('http-status-codes');
 
-const verifyTaskName = (req, res, next) => {
-  const { name } = req.body;
+const verifyTaskTitle = (req, res, next) => {
+  const { title } = req.body;
 
-  if (!name || name.length === 0) {
-    return res.status(StatusCodes.BAD_REQUEST).json({ message: '"name" is required' });
+  if (!title || title.length === 0) {
+    return res.status(StatusCodes.BAD_REQUEST).json({ message: '"title" is required' });
   }
 
   return next();
@@ -20,6 +20,6 @@ const verifyTaskStatus = (req, res, next) => {
   return next();
 };
 
-const taskMiddleware = { verifyTaskName, verifyTaskStatus };
+const taskMiddleware = { verifyTaskTitle, verifyTaskStatus };
 
 module.exports = taskMiddleware;
