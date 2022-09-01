@@ -47,12 +47,11 @@ const deleteById = async (req, res) => {
   }
 };
 
-const updateTaskById = async (req, res) => {
-  const { id } = req.params;
-  const { name, status } = req.body;
-
+const updateById = async (req, res) => {
   try {
-    await taskService.updateTaskById(id, name, status);
+    const { id } = req.params;
+    const data = req.body;
+    await taskService.updateById(id, data);
 
     return res.status(StatusCodes.OK).json({ message: 'Task updated' });
   } catch (Error) {
@@ -61,7 +60,7 @@ const updateTaskById = async (req, res) => {
 };
 
 const taskController = {
-  getAll, getById, create, deleteById, updateTaskById,
+  getAll, getById, create, deleteById, updateById,
 };
 
 module.exports = taskController;
