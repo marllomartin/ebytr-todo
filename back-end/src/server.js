@@ -5,16 +5,16 @@ const taskController = require('./controllers/task.controller');
 const taskMiddleware = require('./middlewares/task.middleware');
 
 const {
-  getAll, getById, create, deleteById, updateTaskById,
+  getAll, getById, create, deleteById, updateById,
 } = taskController;
-const { verifyTaskName, verifyTaskStatus } = taskMiddleware;
+const { verifyTaskTitle, verifyTaskStatus } = taskMiddleware;
 
 const port = process.env.PORT;
 
 app.get('/task', getAll);
 app.get('/task/:id', getById);
-app.post('/task', verifyTaskName, verifyTaskStatus, create);
+app.post('/task', verifyTaskTitle, verifyTaskStatus, create);
 app.delete('/task/:id', deleteById);
-app.put('/task/:id', verifyTaskName, verifyTaskStatus, updateTaskById);
+app.patch('/task/:id', verifyTaskTitle, verifyTaskStatus, updateById);
 
 app.listen(port, () => console.log('Ouvindo porta', port));
