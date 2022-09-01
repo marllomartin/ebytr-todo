@@ -91,7 +91,7 @@ export const ButtonEdit = styled.button`
   }
 
   &:hover {
-    background-color: #4156C4;
+    background-color: #024591;
 
     svg {
     color: #ffffff;

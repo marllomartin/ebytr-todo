@@ -141,7 +141,7 @@ export const Footer = styled.div`
 
   button {
     align-self: center;
-    background-color: #4156C4;
+    background-color: #529964;
     border: none;
     border-radius: 20px;
     width: 170px;
@@ -153,7 +153,7 @@ export const Footer = styled.div`
     transition: 0.5s;
 
     &:hover {
-      background-color: #457c53;
+      background-color: #478256;
     }
   }
 `;
