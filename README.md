@@ -1,9 +1,14 @@
 # Ebytr ToDo
+<div align="center">
+<img src=https://i.imgur.com/F9WoZ9S.png width="250px">
+</div>
 
 ## Sobre
 Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/).
 
-![ToDo](https://github.com/marllomartin/ebytr-todo/blob/main/front-end/public/todo.gif)
+<div align="center">
+<img src=https://i.imgur.com/3MpfU57.png>
+</div>
 
 ## Funcionalidades
 - Exibir tarefas existentes;
