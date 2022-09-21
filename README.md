@@ -42,8 +42,6 @@ Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio 
 
    * Configuração de Hooks personalizados no React;
 
-   * Utilizar o **SWR** para melhorar o consumo de dados em aplicações React;
-
 
 ## Tecnologias Utilizadas
 * [Docker](https://www.docker.com/)
@@ -61,7 +59,6 @@ Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio 
   * [React Icons](https://react-icons.github.io/react-icons/)
   * [Styled Components](https://styled-components.com/)
   * [Axios](https://axios-http.com/ptbr/docs/intro)
-  * [SWR](https://swr.vercel.app/pt-BR)
 
 ## Rodando o projeto com o Docker (recomendado)
 
