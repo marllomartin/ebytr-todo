@@ -4,8 +4,22 @@ import { TaskContext } from "../../context/TaskContext";
 import { BsPencilFill, BsTrashFill } from "react-icons/bs"
 import { Container, ButtonArea, ButtonEdit, ButtonDelete } from "./styles";
 
-export function Task({ id, title, description, status }) {
-  const { handleEdit, handleDelete } = useContext(TaskContext);
+export function Task({ id, title, description, status, handleDeleteTask }) {
+  const {
+    setOpenFormModal,
+    setId,
+    setTitle,
+    setStatus,
+    setDescription
+  } = useContext(TaskContext);
+
+  const handleEditTask = (id, title, status, description) => {
+    setOpenFormModal(true);
+    setId(id);
+    setTitle(title);
+    setStatus(status);
+    setDescription(description);
+  }
 
   return (
     <li>
@@ -15,10 +29,10 @@ export function Task({ id, title, description, status }) {
         <hr />
         <p className="description">{description}</p>
         <ButtonArea>
-          <ButtonEdit onClick={() => handleEdit(id, title, description, status)}>
+          <ButtonEdit onClick={() => handleEditTask(id, title, status, description)}>
             <BsPencilFill />
           </ButtonEdit>
-          <ButtonDelete onClick={() => handleDelete(id)}>
+          <ButtonDelete onClick={() => handleDeleteTask(id)}>
             <BsTrashFill />
           </ButtonDelete>
         </ButtonArea>

@@ -1,13 +1,12 @@
 import React, { createContext, useState } from "react";
 import PropTypes from "prop-types";
 import FormModal from "../components/FormModal";
-import { useAxios } from "../hooks/useAxios";
-import taskAPI from "../services/taskAPI";
 
 export const TaskContext = createContext();
 
 export function TaskContextProvider({ children }) {
-  const { data, mutate } = useAxios("task");
+  const [ taskList, setTaskList ] = useState([]);
+  const [ isLoading, setIsLoading] = useState(true);
 
   const [openFormModal, setOpenFormModal] = useState(false);
 
@@ -60,56 +59,17 @@ export function TaskContextProvider({ children }) {
     setStatus(event.target.value);
   }
 
-  function handleDelete(id) {
-    taskAPI.delete(`task/${id}`);
-
-    const updatedTasks = data?.filter((task) => task.id !== id);
-
-    mutate(updatedTasks, false);
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    const task = { id, title, description, status };
-
-    if (id) {
-      taskAPI.put(`task/${id}`, { title, description, status })
-
-      const updatedTasks = data?.map((task) => {
-        if (task.id === id) {
-          return {
-            ...task, title, description, status
-          };
-        }
-        return task;
-      });
-
-      mutate(updatedTasks, false);
-    } else {
-      taskAPI.post("task", task);
-
-      const updatedTasks = [...data, task];
-
-      mutate(updatedTasks, false);
-    }
-
-    setTitle("");
-    setDescription("");
-    setStatus("Pendente");
-    setOpenFormModal(false);
-  }
-
   return (
     <TaskContext.Provider value={{
+      taskList, setTaskList,
+      isLoading, setIsLoading,
+      setOpenFormModal,
       handleAddTask,
       handleCloseModal,
       handleChangeTitle,
       handleChangeDescription,
       handleChangeStatus,
-      handleSubmit,
       handleEdit,
-      handleDelete,
       title, setTitle,
       titleFilter, setTitleFilter,
       description, setDescription,

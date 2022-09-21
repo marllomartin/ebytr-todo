@@ -1,16 +1,59 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { TaskContext } from "../../context/TaskContext";
+import { createTask, getTasks, updateTask } from "../../services/api";
 import { Overlay, Container, Header, CloseIcon, FormContainer, FormMain, InputGroup, Footer, CheckIcon } from './styles';
 
 export default function FormModal() {
 
-  const { handleCloseModal, title, description, status, handleChangeTitle, handleChangeDescription, handleChangeStatus, handleSubmit } = useContext(TaskContext);
+  const {
+    setTaskList,
+    setOpenFormModal,
+    setIsLoading,
+    id, setId,
+    title, setTitle, handleChangeTitle,
+    description, setDescription, handleChangeDescription,
+    status, setStatus, handleChangeStatus,
+    handleCloseModal
+  } = useContext(TaskContext);
+
+  const loadData = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      const responseTasks = await getTasks();
+      setTaskList(responseTasks.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [setTaskList]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (id) {
+      await updateTask(id, title, status, description);
+    } else {
+      await createTask(title, status, description);
+    }
+
+    setTitle("");
+    setDescription("");
+    setStatus("Pendente");
+    setId(false);
+    setOpenFormModal(false);
+
+    await loadData();
+  }
+
+  useEffect(() => {
+    loadData();
+  }, [loadData])
 
   return (
     <Overlay>
       <Container>
         <Header>
-          <strong>{title? title : "Nova tarefa"}</strong>
+          <strong>{title ? title : "Nova tarefa"}</strong>
           <button type="button" onClick={handleCloseModal}>
             <CloseIcon />
           </button>
@@ -25,7 +68,7 @@ export default function FormModal() {
                 placeholder="Nome da tarefa"
                 value={title}
                 onChange={handleChangeTitle}
-                required="true"
+                required={true}
               />
             </InputGroup>
             <InputGroup>
@@ -52,10 +95,10 @@ export default function FormModal() {
               />
             </InputGroup>
             <Footer>
-            <button type="submit">
-              <CheckIcon />
-            </button>
-          </Footer>
+              <button type="submit">
+                <CheckIcon />
+              </button>
+            </Footer>
           </FormMain>
         </FormContainer>
       </Container>

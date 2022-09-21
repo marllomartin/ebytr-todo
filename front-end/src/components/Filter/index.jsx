@@ -26,7 +26,7 @@ export default function Filter() {
           defaultValue=""
           onChange={(e) => setStatusFilter(e.target.value)}
         >
-          <option value="">Todas</option>
+          <option value="">Todos</option>
           <option value="pendente">Pendente</option>
           <option value="em andamento">Em andamento</option>
           <option value="concluído">Concluído</option>
