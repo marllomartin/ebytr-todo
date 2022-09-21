@@ -5,7 +5,7 @@
 </div>
 
 ## Sobre
-Aplicação full stack de uma lista de tarefas simples desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/).
+Aplicação de página única full stack de uma lista de tarefas desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/) no dia 21/06/2022.
 
 ## Funcionalidades
 - Exibir tarefas existentes;
