@@ -11,18 +11,6 @@ const getAll = async (_req, res) => {
   }
 };
 
-const getById = async (req, res) => {
-  const { id } = req.params;
-
-  try {
-    const result = await taskService.getById(id);
-
-    return res.status(StatusCodes.OK).send(result);
-  } catch (Error) {
-    return res.status(StatusCodes.NOT_FOUND).send({ message: Error.message });
-  }
-};
-
 const create = async (req, res) => {
   const newTask = req.body;
 
@@ -60,7 +48,7 @@ const updateById = async (req, res) => {
 };
 
 const taskController = {
-  getAll, getById, create, deleteById, updateById,
+  getAll, create, deleteById, updateById,
 };
 
 module.exports = taskController;
