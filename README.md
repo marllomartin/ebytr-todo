@@ -23,11 +23,9 @@ Aplicação de página única full stack de uma lista de tarefas desenvolvida pr
 
    * Estilização de componentes React utilizando a biblioteca Styled Components;
     
-   * Consumir uma API utilizando o Axios;
+   * Consumo uma API utilizando o Axios;
 
    * Organização do Context do React para um maior aproveitamento de código entre múltiplos componentes;
-
-   * Configuração de Hooks personalizados no React;
    
 #### Back-End
 
