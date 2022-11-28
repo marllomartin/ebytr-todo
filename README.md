@@ -4,41 +4,41 @@
 <img src=https://i.imgur.com/3MpfU57.png>
 </div>
 
-## Sobre
-Aplicação de página única full stack de uma organizador de tarefas desenvolvida pro desafio técnico da empresa fictícia Ebytr, organizada durante o evento de Blitz de Carreira da [Trybe](https://www.betrybe.com/) no dia 21/06/2022.
+## About
+Full stack single page application of a task organizer developed for the Career Blitz event hosted by [Trybe](https://www.betrybe.com/) on 21/06/2022.
 
-## Funcionalidades
-- Exibir tarefas existentes;
-- Adicionar uma nova tarefa;
-- Filtrar exibição de tarefas por título ou por status;
-- Atualizar tarefas existentes;
-- Deletar tarefas
+## Features
+- Visualize existing tasks;
+- Add a new task;
+- Search tasks by title or by status;
+- Update existing tasks names, descriptions and statuses;
+- Delete existing tasks;
 
 
-## Aprendizados
+## Learnings
+
+   * Developing a containerized application using Docker.
 
 #### Front-End
 
-   * Desenvolvimento mobile first;
+   * Mobile first web development;
 
-   * Estilização de componentes React utilizando a biblioteca Styled Components;
+   * Styling React components with Styled Components library;
     
-   * Consumo uma API utilizando o Axios;
+   * API integration using Axios;
 
-   * Organização do Context do React para um maior aproveitamento de código entre múltiplos componentes;
+   * Setting React Context for better code utility;
    
 #### Back-End
 
-  * Planejamento de um CRUD com Node.js;
+  * Allowing Back-End consuming using CORS;
 
-  * Permitir o consumo do Back-End com a utilização do CORS;
+  * Structuring an API using REST architecture;
 
-  * Estruturação de uma API na arquitetura REST;
-
-  * Organização do banco de dados utilizando o Sequelize;
+  * Organizing database using Sequelize ORM;
 
 
-## Tecnologias Utilizadas
+## Technologies Used
 * [JavaScript](https://www.javascript.com/)
 * [Docker](https://www.docker.com/)
 ### Front-End
@@ -55,22 +55,22 @@ Aplicação de página única full stack de uma organizador de tarefas desenvolv
   * [CORS](https://www.npmjs.com/package/cors)
   * [HTTP-Status-Codes](https://www.npmjs.com/package/http-status-codes)
 
-## Rodando o projeto com o Docker (recomendado)
+## Running project with Docker (recommended)
 
-### Clonando o projeto:
+### Cloning project:
 ```
 git clone git@github.com:marllomartin/ebytr-todo.git
 
 cd ebytr-todo
 ```
-### Inicializando o Docker
+### Building Docker
 ```
 docker-compose up --build
 ```
 
-## Rodando o projeto localmente
+## Running project locally
 
-### Clonando o projeto:
+### Cloning project:
 ```
 git clone git@github.com:marllomartin/ebytr-todo.git
 
@@ -78,49 +78,49 @@ cd ebytr-todo
 ```
 
 
-### Inicializando o Back-End:
-#### Atenção!
-O Back-End do projeto utiliza variáveis de ambiente. Renomeie o arquivo `.env.example` para `.env` e altere os valores de acordo com suas próprias configurações.
+### Running Back-End:
+#### Attention!
+The Back-End of this project has environment variables. Rename the `.env.example` file to `.env` and set its values accordingly to your own settings. 
 
-#### Mudando para a pasta de Back-End:
+#### Changing to Back-End directory:
 ```
 cd back-end
 ```
-#### Instalando as dependências:
+#### Installing dependencies:
 ```
 npm install
 ```
-#### Inicializando o Banco de Dados com Sequelize:
+#### Creating database with Sequelize:
 ```
 npx sequelize db:create
 ```
-#### Executando as Migrations do Banco de Dados com Sequelize:
+#### Running Sequelize migrations:
 ```
 npx sequelize db:migrate
 ```
-#### Populando o Banco de Dados com Sequelize:
+#### Seeding database with Sequelize:
 ```
 npx sequelize db:seed:all
 ```
-#### Rodando o Back-End:
+#### Running Back-End:
 ```
 npm run dev
 ```
 
-### Inicializando o Front-End:
-#### Mudando para a pasta de Front-End:
+### Running Front-End:
+#### Changing to Front-End directory:
 ```
 cd front-end
 ```
-#### Instalando as dependências:
+#### Installing dependencies:
 ```
 npm install
 ```
-#### Rodando o Front-End:
+#### Running Front-End:
 ```
 npm start
 ```
 
-## Referências
+## References
 
-A [série de vídeos](https://youtube.com/playlist?list=PL8YNlUoOZkkY8wjaI2t8DfvysoysmMLCv) do [Huriel Lopes](https://github.com/huri3l) serviu de uma ajuda extraordinária para o estudo do Axios e da biblioteca de Styled Components.
+The [video tutorials](https://youtube.com/playlist?list=PL8YNlUoOZkkY8wjaI2t8DfvysoysmMLCv) made by [Huriel Lopes](https://github.com/huri3l) was very helpful for the better understanding and study of Axios and Styled Components library.
